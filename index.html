@@ -113,13 +113,13 @@
         $(window).resize(function () {
           var h = $(window).height(),
             offsetTop = 105; // Calculate the top offset
-        
+
           $('#map_canvas').css('height', (h - offsetTop));
         }).resize();
-        
+
         $(function() {
           var myMap = new MapsLib({
-            fusionTableId:      "1nqSkS5WPDnQ8hGGS6lVuElP94FBusE9BUVAD4KS-",
+            fusionTableId:      "1SRrdBo81Nx88x3nvwYrekh2a_xEWY5owkGb4-yXb",
             googleApiKey:       "AIzaSyCH78YumF8BDjhpL7o7uOwJP84oisE527g",
             locationColumn:     "NAME",
             map_center:         [42.3875, -71.1000],
@@ -127,7 +127,7 @@
           });
 
           var autocomplete = new google.maps.places.Autocomplete(document.getElementById('search_address'));
-      
+
           $(':checkbox').click(function(){
             myMap.doSearch();
           });
@@ -135,25 +135,25 @@
           $(':radio').click(function(){
             myMap.doSearch();
           });
-          
+
           $('#search_radius').change(function(){
             myMap.doSearch();
           });
-          
+
           $('#search').click(function(){
             myMap.doSearch();
           });
-          
+
           $('#find_me').click(function(){
-            myMap.findMe(); 
+            myMap.findMe();
             return false;
           });
-          
+
           $('#reset').click(function(){
-            myMap.reset(); 
+            myMap.reset();
             return false;
           });
-          
+
           $(":text").keydown(function(e){
               var key =  e.keyCode ? e.keyCode : e.which;
               if(key === 13) {
